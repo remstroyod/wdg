@@ -1,0 +1,64 @@
+@import "variables";
+@import "mixins-media";
+
+.wdg {
+
+  &__rating {
+    position: fixed;
+    z-index: 998;
+    bottom: 60px;
+    width: 300px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8b8b8b;
+    box-shadow: 0px 10px 50px -17px rgba(0,0,0,0.58);
+
+    &.bottom {
+      $left_or_right: 40px;
+
+      &_center {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &_right {
+        right: $left_or_right;
+      }
+
+      &_left {
+        left: $left_or_right;
+      }
+    }
+
+  }
+
+  &__list {
+    &-item {
+      .link {
+        @include media(sm) {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: block;
+        }
+      }
+
+      &--cell {
+        @include media(sm) {
+          display: flex;
+          align-items: center;
+        }
+
+        .rating {
+          @include media(sm) {
+            margin: 0 0 0 12px;
+          }
+        }
+      }
+    }
+  }
+
+}
