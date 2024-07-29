@@ -2,3 +2,4 @@
 .DS_Store
 /temp
 *.log
+assets/node_modules
